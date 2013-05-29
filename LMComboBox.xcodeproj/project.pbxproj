@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E72019B91756268D009E9535 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E72019B81756268D009E9535 /* Cocoa.framework */; };
-		E72019C31756268D009E9535 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E72019C11756268D009E9535 /* InfoPlist.strings */; };
 		E72019C51756268D009E9535 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E72019C41756268D009E9535 /* main.m */; };
-		E72019C91756268D009E9535 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E72019C71756268D009E9535 /* Credits.rtf */; };
 		E72019CC1756268D009E9535 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E72019CB1756268D009E9535 /* AppDelegate.m */; };
 		E72019CF1756268E009E9535 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E72019CD1756268E009E9535 /* MainMenu.xib */; };
 		E72019D7175627C4009E9535 /* LMComboBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E72019D6175627C4009E9535 /* LMComboBox.m */; };
@@ -23,10 +21,8 @@
 		E72019BC1756268D009E9535 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		E72019BD1756268D009E9535 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E72019C01756268D009E9535 /* LMComboBox-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LMComboBox-Info.plist"; sourceTree = "<group>"; };
-		E72019C21756268D009E9535 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E72019C41756268D009E9535 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E72019C61756268D009E9535 /* LMComboBox-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LMComboBox-Prefix.pch"; sourceTree = "<group>"; };
-		E72019C81756268D009E9535 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		E72019CA1756268D009E9535 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E72019CB1756268D009E9535 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E72019CE1756268E009E9535 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -99,10 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				E72019C01756268D009E9535 /* LMComboBox-Info.plist */,
-				E72019C11756268D009E9535 /* InfoPlist.strings */,
 				E72019C41756268D009E9535 /* main.m */,
 				E72019C61756268D009E9535 /* LMComboBox-Prefix.pch */,
-				E72019C71756268D009E9535 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -158,8 +152,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E72019C31756268D009E9535 /* InfoPlist.strings in Resources */,
-				E72019C91756268D009E9535 /* Credits.rtf in Resources */,
 				E72019CF1756268E009E9535 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -180,22 +172,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E72019C11756268D009E9535 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E72019C21756268D009E9535 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		E72019C71756268D009E9535 /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E72019C81756268D009E9535 /* en */,
-			);
-			name = Credits.rtf;
-			sourceTree = "<group>";
-		};
 		E72019CD1756268E009E9535 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
