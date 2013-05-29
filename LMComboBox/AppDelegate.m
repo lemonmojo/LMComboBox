@@ -94,12 +94,12 @@
         paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
         [paragraphStyle setAlignment:NSCenterTextAlignment];
         
-        NSString* txtF = [[cellStr stringByReplacingOccurrencesOfString:@"[ " withString:@""] stringByReplacingOccurrencesOfString:@" ]" withString:@""];
-        NSAttributedString* txtA = [[NSAttributedString alloc] initWithString:txtF attributes:
+        NSAttributedString* txtA = [[NSAttributedString alloc] initWithString:cellStr attributes:
                                     [NSDictionary dictionaryWithObjectsAndKeys:
                                      [NSNumber numberWithFloat:0.20], NSObliquenessAttributeName,
                                      paragraphStyle, NSParagraphStyleAttributeName,
                                      nil]];
+        
         [txtCell setAttributedStringValue:txtA];
     }
 }
