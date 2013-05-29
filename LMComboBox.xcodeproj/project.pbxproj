@@ -1,0 +1,315 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E72019B91756268D009E9535 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E72019B81756268D009E9535 /* Cocoa.framework */; };
+		E72019C31756268D009E9535 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E72019C11756268D009E9535 /* InfoPlist.strings */; };
+		E72019C51756268D009E9535 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E72019C41756268D009E9535 /* main.m */; };
+		E72019C91756268D009E9535 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E72019C71756268D009E9535 /* Credits.rtf */; };
+		E72019CC1756268D009E9535 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E72019CB1756268D009E9535 /* AppDelegate.m */; };
+		E72019CF1756268E009E9535 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E72019CD1756268E009E9535 /* MainMenu.xib */; };
+		E72019D7175627C4009E9535 /* LMComboBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E72019D6175627C4009E9535 /* LMComboBox.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E72019B51756268D009E9535 /* LMComboBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LMComboBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E72019B81756268D009E9535 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		E72019BB1756268D009E9535 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		E72019BC1756268D009E9535 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E72019BD1756268D009E9535 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E72019C01756268D009E9535 /* LMComboBox-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LMComboBox-Info.plist"; sourceTree = "<group>"; };
+		E72019C21756268D009E9535 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E72019C41756268D009E9535 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E72019C61756268D009E9535 /* LMComboBox-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LMComboBox-Prefix.pch"; sourceTree = "<group>"; };
+		E72019C81756268D009E9535 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		E72019CA1756268D009E9535 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E72019CB1756268D009E9535 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E72019CE1756268E009E9535 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		E72019D5175627C4009E9535 /* LMComboBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMComboBox.h; sourceTree = "<group>"; };
+		E72019D6175627C4009E9535 /* LMComboBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMComboBox.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E72019B21756268D009E9535 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E72019B91756268D009E9535 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E72019AC1756268D009E9535 = {
+			isa = PBXGroup;
+			children = (
+				E72019BE1756268D009E9535 /* LMComboBox */,
+				E72019B71756268D009E9535 /* Frameworks */,
+				E72019B61756268D009E9535 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E72019B61756268D009E9535 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E72019B51756268D009E9535 /* LMComboBox.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E72019B71756268D009E9535 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E72019B81756268D009E9535 /* Cocoa.framework */,
+				E72019BA1756268D009E9535 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E72019BA1756268D009E9535 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E72019BB1756268D009E9535 /* AppKit.framework */,
+				E72019BC1756268D009E9535 /* CoreData.framework */,
+				E72019BD1756268D009E9535 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		E72019BE1756268D009E9535 /* LMComboBox */ = {
+			isa = PBXGroup;
+			children = (
+				E72019D5175627C4009E9535 /* LMComboBox.h */,
+				E72019D6175627C4009E9535 /* LMComboBox.m */,
+				E72019CA1756268D009E9535 /* AppDelegate.h */,
+				E72019CB1756268D009E9535 /* AppDelegate.m */,
+				E72019CD1756268E009E9535 /* MainMenu.xib */,
+				E72019BF1756268D009E9535 /* Supporting Files */,
+			);
+			path = LMComboBox;
+			sourceTree = "<group>";
+		};
+		E72019BF1756268D009E9535 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E72019C01756268D009E9535 /* LMComboBox-Info.plist */,
+				E72019C11756268D009E9535 /* InfoPlist.strings */,
+				E72019C41756268D009E9535 /* main.m */,
+				E72019C61756268D009E9535 /* LMComboBox-Prefix.pch */,
+				E72019C71756268D009E9535 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E72019B41756268D009E9535 /* LMComboBox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E72019D21756268E009E9535 /* Build configuration list for PBXNativeTarget "LMComboBox" */;
+			buildPhases = (
+				E72019B11756268D009E9535 /* Sources */,
+				E72019B21756268D009E9535 /* Frameworks */,
+				E72019B31756268D009E9535 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LMComboBox;
+			productName = LMComboBox;
+			productReference = E72019B51756268D009E9535 /* LMComboBox.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E72019AD1756268D009E9535 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Lemon Mojo";
+			};
+			buildConfigurationList = E72019B01756268D009E9535 /* Build configuration list for PBXProject "LMComboBox" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E72019AC1756268D009E9535;
+			productRefGroup = E72019B61756268D009E9535 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E72019B41756268D009E9535 /* LMComboBox */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E72019B31756268D009E9535 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E72019C31756268D009E9535 /* InfoPlist.strings in Resources */,
+				E72019C91756268D009E9535 /* Credits.rtf in Resources */,
+				E72019CF1756268E009E9535 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E72019B11756268D009E9535 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E72019C51756268D009E9535 /* main.m in Sources */,
+				E72019CC1756268D009E9535 /* AppDelegate.m in Sources */,
+				E72019D7175627C4009E9535 /* LMComboBox.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E72019C11756268D009E9535 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E72019C21756268D009E9535 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E72019C71756268D009E9535 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E72019C81756268D009E9535 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		E72019CD1756268E009E9535 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E72019CE1756268E009E9535 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E72019D01756268E009E9535 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx10.7;
+			};
+			name = Debug;
+		};
+		E72019D11756268E009E9535 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx10.7;
+			};
+			name = Release;
+		};
+		E72019D31756268E009E9535 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LMComboBox/LMComboBox-Prefix.pch";
+				INFOPLIST_FILE = "LMComboBox/LMComboBox-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E72019D41756268E009E9535 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LMComboBox/LMComboBox-Prefix.pch";
+				INFOPLIST_FILE = "LMComboBox/LMComboBox-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E72019B01756268D009E9535 /* Build configuration list for PBXProject "LMComboBox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E72019D01756268E009E9535 /* Debug */,
+				E72019D11756268E009E9535 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E72019D21756268E009E9535 /* Build configuration list for PBXNativeTarget "LMComboBox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E72019D31756268E009E9535 /* Debug */,
+				E72019D41756268E009E9535 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E72019AD1756268D009E9535 /* Project object */;
+}
