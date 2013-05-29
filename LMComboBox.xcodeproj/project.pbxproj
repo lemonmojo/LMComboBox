@@ -12,6 +12,7 @@
 		E72019CC1756268D009E9535 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E72019CB1756268D009E9535 /* AppDelegate.m */; };
 		E72019CF1756268E009E9535 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E72019CD1756268E009E9535 /* MainMenu.xib */; };
 		E72019D7175627C4009E9535 /* LMComboBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E72019D6175627C4009E9535 /* LMComboBox.m */; };
+		E72019D917563256009E9535 /* License in Resources */ = {isa = PBXBuildFile; fileRef = E72019D817563256009E9535 /* License */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		E72019CE1756268E009E9535 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		E72019D5175627C4009E9535 /* LMComboBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMComboBox.h; sourceTree = "<group>"; };
 		E72019D6175627C4009E9535 /* LMComboBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMComboBox.m; sourceTree = "<group>"; };
+		E72019D817563256009E9535 /* License */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 		E72019BF1756268D009E9535 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E72019D817563256009E9535 /* License */,
 				E72019C01756268D009E9535 /* LMComboBox-Info.plist */,
 				E72019C41756268D009E9535 /* main.m */,
 				E72019C61756268D009E9535 /* LMComboBox-Prefix.pch */,
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E72019CF1756268E009E9535 /* MainMenu.xib in Resources */,
+				E72019D917563256009E9535 /* License in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
