@@ -18,6 +18,6 @@
 @property (assign) IBOutlet LMComboBox *comboBox;
 @property (assign) IBOutlet NSArrayController *comboBoxArrayController;
 
-- (NSDictionary*)itemAtIndex:(NSInteger)index;
+- (IBAction)buttonRemoveSelectedItem_action:(id)sender;
 
 @end

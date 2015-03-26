@@ -60,12 +60,24 @@
                            @"Chromebook Pixel", @"title",
                            nil];
     
-    NSArray* items = [NSArray arrayWithObjects: sepa1, item1, item2, item3, item4, sepa2, item5, item6, nil];
+    NSMutableArray* items = [NSMutableArray arrayWithObjects:sepa1, item1, item2, item3, item4, sepa2, item5, item6, nil];
     
     self.comboBoxArrayController.content = items;
     
     // This class is also the delegate for the Combo Box's Table View
     comboBox.tableViewDelegate = self;
+}
+
+- (IBAction)buttonRemoveSelectedItem_action:(id)sender {
+    NSInteger selIdx = [self.comboBox indexOfSelectedItem];
+    
+    if (selIdx == NSNotFound ||
+        selIdx < 0) {
+        return;
+    }
+    
+    [self.comboBoxArrayController removeObjectAtArrangedObjectIndex:selIdx];
+    [self.comboBox setStringValue:@""];
 }
 
 - (NSDictionary*)itemAtIndex:(NSInteger)index {
@@ -102,6 +114,11 @@
         
         [txtCell setAttributedStringValue:txtA];
     }
+}
+
+// You have to implement this if you want to be able to modify (add/remove items) the content of the ComboBox
+- (void)_numberOfRowsDidChangeInComboBoxTableView:(NSTableView *)aTableView {
+    
 }
 
 - (BOOL)tableView:(NSTableView *)aTableView shouldSelectRow:(NSInteger)rowIndex {

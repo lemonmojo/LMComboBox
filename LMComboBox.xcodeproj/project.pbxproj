@@ -252,6 +252,7 @@
 				GCC_PREFIX_HEADER = "LMComboBox/LMComboBox-Prefix.pch";
 				INFOPLIST_FILE = "LMComboBox/LMComboBox-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -264,6 +265,7 @@
 				GCC_PREFIX_HEADER = "LMComboBox/LMComboBox-Prefix.pch";
 				INFOPLIST_FILE = "LMComboBox/LMComboBox-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

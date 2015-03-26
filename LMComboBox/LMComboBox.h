@@ -8,11 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface LMComboBox : NSComboBox<NSTableViewDelegate> {
+@interface LMComboBox : NSComboBox {
     BOOL m_isPopUpOpen;
     id<NSTableViewDelegate> tableViewDelegate;
 }
 
-@property (nonatomic, retain) id<NSTableViewDelegate> tableViewDelegate;
+@property (nonatomic, assign) id<NSTableViewDelegate> tableViewDelegate;
 
 @end
