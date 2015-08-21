@@ -12,4 +12,4 @@ License
 
 Credits
 -------
-LanguageMenu was created by [Felix Deimel](https://github.com/LemonMojo).</br>
+LMComboBox was created by [Felix Deimel](https://github.com/LemonMojo).</br>
