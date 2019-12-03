@@ -8,9 +8,9 @@
 
 #import "LMComboBox.h"
 
-@implementation LMComboBox
-
-@synthesize tableViewDelegate;
+@implementation LMComboBox {
+    BOOL m_isPopUpOpen;
+}
 
 - (id)initWithFrame:(NSRect)frame {
     self = [super initWithFrame:frame];
@@ -25,23 +25,24 @@
 - (void)awakeFromNib {
     m_isPopUpOpen = NO;
     
-	[[NSNotificationCenter defaultCenter] addObserver:self
-											 selector:@selector(willPopUp:)
-												 name:NSComboBoxWillPopUpNotification
-											   object:self];
+    NSNotificationCenter* notificationCenter = NSNotificationCenter.defaultCenter;
     
-	[[NSNotificationCenter defaultCenter] addObserver:self
-											 selector:@selector(willDismiss:)
-												 name:NSComboBoxWillDismissNotification
-											   object:self];
+	[notificationCenter addObserver:self
+                           selector:@selector(willPopUp:)
+                               name:NSComboBoxWillPopUpNotification
+                             object:self];
+    
+	[notificationCenter addObserver:self
+                           selector:@selector(willDismiss:)
+                               name:NSComboBoxWillDismissNotification
+                             object:self];
 }
 
 - (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [NSNotificationCenter.defaultCenter removeObserver:self];
     
-    if (tableViewDelegate) {
-        [tableViewDelegate release];
-        tableViewDelegate = nil;
+    if (self.tableViewDelegate) {
+        [self.tableViewDelegate release]; self.tableViewDelegate = nil;
     }
     
     [super dealloc];
@@ -51,8 +52,8 @@
 	NSWindow *child = nil;
     
 	if (m_isPopUpOpen) {
-		for (child in [[self window] childWindows]) {
-			if ([[child className] isEqualToString:@"NSComboBoxWindow"]) {
+		for (child in self.window.childWindows) {
+			if ([child.className isEqualToString:@"NSComboBoxWindow"]) {
 				break;
 			}
 		}
@@ -77,29 +78,41 @@
 	m_isPopUpOpen = NO;
 }
 
-- (void)setTableViewDelegate
-{
-    NSWindow *popUpWindow = [self comboBoxPopUpWindow];
+- (NSClipView*)clipViewOfPopUpWindow:(NSWindow*)popUpWindow {
+    for (NSView* subView1 in ((NSView*)popUpWindow.contentView).subviews) {
+        if (subView1.class == NSClipView.class) {
+            return (NSClipView*)subView1;
+        } else if (subView1.class == NSScrollView.class) {
+            NSScrollView* scrollView = (NSScrollView*)subView1;
+            
+            return scrollView.contentView;
+        }
+    }
+    
+    return nil;
+}
+
+- (void)setTableViewDelegate {
+    NSWindow *popUpWindow = self.comboBoxPopUpWindow;
     
     NSTableView* tv = nil;
     
-    for (NSView* subView1 in ((NSView*)popUpWindow.contentView).subviews) {
-        if (subView1.class == [NSClipView class]) {
-            for (NSView* subView2 in subView1.subviews) {
-                if ([subView2.class isSubclassOfClass:[NSTableView class]]) {
-                    tv = (NSTableView*)subView2;
-                    
-                    break;
-                }
+    NSClipView* clipView = [self clipViewOfPopUpWindow:popUpWindow];
+    
+    if (clipView) {
+        for (NSView* subView in clipView.subviews) {
+            if ([subView.class isSubclassOfClass:NSTableView.class]) {
+                tv = (NSTableView*)subView;
+                
+                break;
             }
-            
-            break;
         }
     }
     
     if (tv &&
-        tv.delegate != tableViewDelegate) {
-        tv.delegate = tableViewDelegate;
+        tv.delegate != self.tableViewDelegate) {
+        tv.delegate = self.tableViewDelegate;
+        
         [tv reloadData];
     }
 }

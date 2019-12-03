@@ -9,10 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "LMComboBox.h"
 
-@interface AppDelegate : NSObject <NSApplicationDelegate, NSTableViewDelegate> {
-    LMComboBox *comboBox;
-    NSArrayController *comboBoxArrayController;
-}
+@interface AppDelegate : NSObject <NSApplicationDelegate, NSTableViewDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet LMComboBox *comboBox;

@@ -10,66 +10,43 @@
 
 @implementation AppDelegate
 
-@synthesize comboBox;
-@synthesize comboBoxArrayController;
-
-- (void)dealloc {
-    [super dealloc];
-}
-
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Set up Items for the Combo Box
     
-    NSDictionary* sepa1 = [NSDictionary dictionaryWithObjectsAndKeys:
-                           [NSNumber numberWithBool:YES], @"isSeparator",
-                           @"Apple Products", @"title",
-                           nil];
+    NSDictionary* sepa1 = @{ @"isSeparator": @YES,
+                             @"title": @"Apple Products" };
     
-    NSDictionary* item1 = [NSDictionary dictionaryWithObjectsAndKeys:
-                           [NSNumber numberWithBool:NO], @"isSeparator",
-                           @"MacBook Pro", @"title",
-                           nil];
+    NSDictionary* item1 = @{ @"isSeparator": @NO,
+                             @"title": @"MacBook Pro" };
     
-    NSDictionary* item2 = [NSDictionary dictionaryWithObjectsAndKeys:
-                           [NSNumber numberWithBool:NO], @"isSeparator",
-                           @"iMac", @"title",
-                           nil];
+    NSDictionary* item2 = @{ @"isSeparator": @NO,
+                             @"title": @"iMac" };
     
-    NSDictionary* item3 = [NSDictionary dictionaryWithObjectsAndKeys:
-                           [NSNumber numberWithBool:NO], @"isSeparator",
-                           @"iPhone", @"title",
-                           nil];
+    NSDictionary* item3 = @{ @"isSeparator": @NO,
+                             @"title": @"iPhone" };
     
-    NSDictionary* item4 = [NSDictionary dictionaryWithObjectsAndKeys:
-                           [NSNumber numberWithBool:NO], @"isSeparator",
-                           @"iPad", @"title",
-                           nil];
+    NSDictionary* item4 = @{ @"isSeparator": @NO,
+                             @"title": @"iPad" };
     
-    NSDictionary* sepa2 = [NSDictionary dictionaryWithObjectsAndKeys:
-                           [NSNumber numberWithBool:YES], @"isSeparator",
-                           @"Google Products", @"title",
-                           nil];
+    NSDictionary* sepa2 = @{ @"isSeparator": @YES,
+                             @"title": @"Google Products" };
     
-    NSDictionary* item5 = [NSDictionary dictionaryWithObjectsAndKeys:
-                           [NSNumber numberWithBool:NO], @"isSeparator",
-                           @"Nexus 7", @"title",
-                           nil];
+    NSDictionary* item5 = @{ @"isSeparator": @NO,
+                             @"title": @"Nexus 7" };
     
-    NSDictionary* item6 = [NSDictionary dictionaryWithObjectsAndKeys:
-                           [NSNumber numberWithBool:NO], @"isSeparator",
-                           @"Chromebook Pixel", @"title",
-                           nil];
+    NSDictionary* item6 = @{ @"isSeparator": @NO,
+                             @"title": @"Chromebook Pixel" };
     
-    NSMutableArray* items = [NSMutableArray arrayWithObjects:sepa1, item1, item2, item3, item4, sepa2, item5, item6, nil];
+    NSMutableArray* items = [[@[ sepa1, item1, item2, item3, item4, sepa2, item5, item6 ] mutableCopy] autorelease];
     
     self.comboBoxArrayController.content = items;
     
     // This class is also the delegate for the Combo Box's Table View
-    comboBox.tableViewDelegate = self;
+    self.comboBox.tableViewDelegate = self;
 }
 
 - (IBAction)buttonRemoveSelectedItem_action:(id)sender {
-    NSInteger selIdx = [self.comboBox indexOfSelectedItem];
+    NSInteger selIdx = self.comboBox.indexOfSelectedItem;
     
     if (selIdx == NSNotFound ||
         selIdx < 0) {
@@ -77,14 +54,25 @@
     }
     
     [self.comboBoxArrayController removeObjectAtArrangedObjectIndex:selIdx];
-    [self.comboBox setStringValue:@""];
+    
+    self.comboBox.stringValue = @"";
 }
 
 - (NSDictionary*)itemAtIndex:(NSInteger)index {
     // Return an item from a specific position in the Array Controller
     
-    [comboBoxArrayController setSelectionIndex:index];
-    return (NSDictionary*)[comboBoxArrayController selection];
+    self.comboBoxArrayController.selectionIndex = index;
+    
+    NSArray* selectedObjects = self.comboBoxArrayController.selectedObjects;
+    
+    NSDictionary* item = nil;
+    
+    if (selectedObjects &&
+        selectedObjects.count > 0) {
+        item = selectedObjects[0];
+    }
+    
+    return item;
 }
 
 - (void)tableView:(NSTableView *)aTableView willDisplayCell:(id)aCell forTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex {
@@ -92,27 +80,26 @@
     
     NSDictionary* item = [self itemAtIndex:rowIndex];
     
-    BOOL isSeparator = [[item valueForKey:@"isSeparator"] boolValue];
+    BOOL isSeparator = [item[@"isSeparator"] boolValue];
     
     NSTextFieldCell* txtCell = (NSTextFieldCell*)aCell;
-    NSString* cellStr = [txtCell stringValue];
+    NSString* cellStr = txtCell.stringValue;
     
-    [txtCell setEnabled:!isSeparator];
-    [txtCell setSelectable:!isSeparator];
+    txtCell.enabled = !isSeparator;
+    txtCell.selectable = NO;
+    txtCell.textColor = isSeparator ? NSColor.disabledControlTextColor : NSColor.controlTextColor;
     
     if (isSeparator) {
-        NSMutableParagraphStyle *paragraphStyle;
+        NSMutableParagraphStyle *paragraphStyle = [NSParagraphStyle.defaultParagraphStyle.mutableCopy autorelease];
         
-        paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
-        [paragraphStyle setAlignment:NSCenterTextAlignment];
+        paragraphStyle.alignment = NSCenterTextAlignment;
         
-        NSAttributedString* txtA = [[NSAttributedString alloc] initWithString:cellStr attributes:
-                                    [NSDictionary dictionaryWithObjectsAndKeys:
-                                     [NSNumber numberWithFloat:0.20], NSObliquenessAttributeName,
-                                     paragraphStyle, NSParagraphStyleAttributeName,
-                                     nil]];
+        NSDictionary* attributes = @{ NSObliquenessAttributeName: @0.20f,
+                                      NSParagraphStyleAttributeName: paragraphStyle };
         
-        [txtCell setAttributedStringValue:txtA];
+        NSAttributedString* txtA = [[[NSAttributedString alloc] initWithString:cellStr attributes:attributes] autorelease];
+        
+        txtCell.attributedStringValue = txtA;
     }
 }
 
@@ -124,7 +111,10 @@
 - (BOOL)tableView:(NSTableView *)aTableView shouldSelectRow:(NSInteger)rowIndex {
     // Separator items should not be selectable
     
-    return ![[[self itemAtIndex:rowIndex] valueForKey:@"isSeparator"] boolValue];
+    NSDictionary* item = [self itemAtIndex:rowIndex];
+    BOOL isSeparator = [item[@"isSeparator"] boolValue];
+    
+    return !isSeparator;
 }
 
 @end
