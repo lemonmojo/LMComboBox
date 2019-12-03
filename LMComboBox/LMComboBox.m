@@ -80,9 +80,9 @@
 
 - (NSClipView*)clipViewOfPopUpWindow:(NSWindow*)popUpWindow {
     for (NSView* subView1 in ((NSView*)popUpWindow.contentView).subviews) {
-        if (subView1.class == NSClipView.class) {
+        if ([subView1 isKindOfClass:NSClipView.class]) {
             return (NSClipView*)subView1;
-        } else if (subView1.class == NSScrollView.class) {
+        } else if ([subView1 isKindOfClass:NSScrollView.class]) {
             NSScrollView* scrollView = (NSScrollView*)subView1;
             
             return scrollView.contentView;
@@ -101,7 +101,7 @@
     
     if (clipView) {
         for (NSView* subView in clipView.subviews) {
-            if ([subView.class isSubclassOfClass:NSTableView.class]) {
+            if ([subView isKindOfClass:NSTableView.class]) {
                 tv = (NSTableView*)subView;
                 
                 break;
